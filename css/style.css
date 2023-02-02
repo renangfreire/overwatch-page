@@ -1,0 +1,405 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth; }
+
+a {
+  text-decoration: none; }
+
+a:link, a:visited {
+  color: #ffffff; }
+
+header {
+  height: 100vh;
+  position: relative; }
+  header .header__background:before {
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url(../assets/images/mozaico/mozaico-7.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -2; }
+  header .header__background:after {
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: radial-gradient(63.65% 201.15% at -1.28% 64.2%, rgba(11, 32, 64, 0.85) 0%, rgba(35, 50, 64, 0) 100%);
+    mix-blend-mode: multiply;
+    z-index: -1; }
+  header .company-header {
+    width: 100%;
+    background-color: #020203;
+    display: flex;
+    height: 6.4rem;
+    padding: 0 11.2rem;
+    align-items: center;
+    gap: 14rem; }
+    header .company-header a > img {
+      width: 6.6rem; }
+    header .company-header .company-functions {
+      display: flex;
+      justify-content: space-between;
+      width: 100%; }
+      header .company-header .company-functions .company-nav {
+        display: flex;
+        gap: 4rem;
+        align-items: center; }
+        header .company-header .company-functions .company-nav a {
+          color: #ffffff;
+          font-size: 1.4rem;
+          font-weight: 500; }
+        header .company-header .company-functions .company-nav img {
+          margin-left: 1.2rem;
+          width: 1rem; }
+      header .company-header .company-functions .account-functions {
+        display: flex;
+        align-items: center;
+        gap: 1.6rem; }
+        header .company-header .company-functions .account-functions .btn-black {
+          font-size: 1.4rem;
+          font-weight: 500;
+          padding: .6rem 1.6rem;
+          border-radius: 4px;
+          cursor: pointer;
+          line-height: 2.1rem;
+          background-color: #020203;
+          border: 1px solid #ffffff;
+          color: #ffffff; }
+        header .company-header .company-functions .account-functions .btn-white {
+          font-size: 1.4rem;
+          font-weight: 500;
+          padding: .6rem 1.6rem;
+          border-radius: 4px;
+          cursor: pointer;
+          line-height: 2.1rem;
+          color: #020203;
+          border: 1px solid #020203; }
+  header .game-header {
+    padding: 2.4rem 11.2rem 0;
+    border-radius: .4rem;
+    display: flex; }
+    header .game-header .nav__game-logo {
+      background-color: #394043;
+      padding: 1.2rem 1.6rem;
+      border-radius: .4rem 0 0 .4rem; }
+    header .game-header .nav__game-links {
+      width: 100%;
+      background-color: #F2F1ED;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 2.4rem;
+      gap: 11.1rem; }
+      header .game-header .nav__game-links .nav__links, header .game-header .nav__game-links .nav__product-links {
+        display: flex;
+        align-items: center; }
+      header .game-header .nav__game-links .nav__links {
+        gap: 1.6rem; }
+        header .game-header .nav__game-links .nav__links a:has(img) img {
+          padding-left: .8rem; }
+      header .game-header .nav__game-links .nav__product-links {
+        display: flex;
+        gap: 1.9rem; }
+        header .game-header .nav__game-links .nav__product-links .nav__link::before {
+          padding-right: 1.9rem; }
+      header .game-header .nav__game-links a {
+        color: #394043;
+        font-size: 1.3rem;
+        font-weight: 500;
+        line-height: 2rem;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center; }
+      header .game-header .nav__game-links .nav__link {
+        display: flex; }
+      header .game-header .nav__game-links .nav__link + .nav__link::before {
+        content: '';
+        width: 1px;
+        height: auto;
+        border-left: 1px solid #BAC0C2;
+        margin: 3px 0;
+        padding-right: 1.6rem; }
+    header .game-header .nav-game__buy-button {
+      background-color: #EF7D00;
+      color: #ffffff;
+      font-weight: bold;
+      line-height: 2rem;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      padding: 1.4rem 3.6rem;
+      white-space: nowrap;
+      border-radius: 0 .4rem .4rem 0;
+      cursor: pointer; }
+  header .game-container {
+    padding: 11.3rem 11.2rem;
+    display: flex;
+    height: calc(100% - 140px); }
+    header .game-container .game-container__info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      header .game-container .game-container__info .game-container__buy {
+        display: flex;
+        flex-direction: column;
+        gap: 3.2rem; }
+      header .game-container .game-container__info button {
+        background-color: #EF7D00;
+        color: white;
+        position: relative;
+        clip-path: polygon(10% 0%, 100% 0, 90% 100%, 0% 100%);
+        padding: 1.5rem 5.9rem;
+        line-height: 2.7rem;
+        cursor: pointer;
+        font-family: "Poppins", sans-serif;
+        white-space: nowrap;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 1.8rem; }
+    header .game-container .game-container__plataforms {
+      display: flex;
+      gap: 4rem; }
+    header .game-container .game-container__preview {
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end; }
+      header .game-container .game-container__preview > div {
+        position: relative; }
+        header .game-container .game-container__preview > div .img__preview {
+          -webkit-box-shadow: 0px 11px 10px 1px rgba(2, 2, 3, 0.5);
+          -moz-box-shadow: 0px 11px 10px 1px rgba(2, 2, 3, 0.5);
+          box-shadow: 0px 11px 10px 1px rgba(2, 2, 3, 0.5); }
+          header .game-container .game-container__preview > div .img__preview:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(58.29% 58.29% at 50% 28.8%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.46) 100%);
+            z-index: 1; }
+          header .game-container .game-container__preview > div .img__preview img {
+            height: 18rem; }
+        header .game-container .game-container__preview > div button {
+          width: 5.1rem;
+          padding: 1.6rem 2rem;
+          background: linear-gradient(136.72deg, rgba(7, 7, 10, 0.86) 19.22%, rgba(15, 16, 22, 0.5) 76.59%);
+          border-radius: 100%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          cursor: pointer;
+          z-index: 2; }
+          header .game-container .game-container__preview > div button .startButton:before {
+            content: '';
+            padding: .2rem 1.3rem;
+            background-color: #EF7D00;
+            clip-path: polygon(50% 50%, 0% 0, 0 100%); }
+
+.news-container {
+  display: flex;
+  padding: 6rem 11.2rem 0;
+  font-family: "Roboto Condensed", sans-serif;
+  justify-content: center;
+  gap: 6rem;
+  overflow: hidden; }
+  .news-container .news__person-container {
+    display: flex;
+    align-items: center; }
+    .news-container .news__person-container .news__person-info h3 {
+      text-transform: uppercase;
+      font-style: italic;
+      color: #00AEFF;
+      font-size: 1.8rem;
+      line-height: 2.1rem; }
+    .news-container .news__person-container .news__person-info h2 {
+      font-style: italic;
+      font-size: 3.2rem;
+      line-height: 3.8rem;
+      text-transform: uppercase;
+      padding-bottom: 1.6rem;
+      color: #002550; }
+    .news-container .news__person-container .news__person-info p {
+      border-left: 3px solid #00AEFF;
+      padding-left: .8rem;
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+      color: #51595C; }
+    .news-container .news__person-container .news__person-info button {
+      background-color: #0373BE;
+      color: white;
+      position: relative;
+      clip-path: polygon(10% 0%, 100% 0, 90% 100%, 0% 100%);
+      padding: 1.5rem 5.9rem;
+      line-height: 2.7rem;
+      cursor: pointer;
+      font-family: "Poppins", sans-serif;
+      white-space: nowrap;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1.8rem;
+      margin-top: 3.2rem; }
+    .news-container .news__person-container .news__person-background {
+      position: relative; }
+      .news-container .news__person-container .news__person-background img {
+        width: 36rem; }
+      .news-container .news__person-container .news__person-background:after {
+        content: '';
+        width: 50%;
+        height: calc(100% + 6.1rem);
+        position: absolute;
+        top: -6.1rem;
+        right: 0;
+        background: linear-gradient(180deg, #4E99B8 0%, #91D7D5 100%);
+        z-index: -1; }
+  .news-container .news___new-game-container {
+    display: flex;
+    align-items: center; }
+    .news-container .news___new-game-container .news__new-game-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .news-container .news___new-game-container .news__new-game-info h2 {
+        font-style: italic;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        color: #394043;
+        padding-bottom: 1.6rem; }
+      .news-container .news___new-game-container .news__new-game-info div {
+        padding-top: 3.2rem; }
+        .news-container .news___new-game-container .news__new-game-info div button {
+          background-color: #EF7D00;
+          color: white;
+          position: relative;
+          clip-path: polygon(10% 0%, 100% 0, 90% 100%, 0% 100%);
+          padding: 1.5rem 5.9rem;
+          line-height: 2.7rem;
+          cursor: pointer;
+          font-family: "Poppins", sans-serif;
+          white-space: nowrap;
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 1.8rem;
+          line-height: 2.7rem; }
+    .news-container .news___new-game-container .news__new-game-background {
+      position: relative; }
+      .news-container .news___new-game-container .news__new-game-background:before {
+        content: "";
+        position: absolute;
+        top: -8rem;
+        width: 100rem;
+        height: calc(100% + 10rem);
+        left: 0;
+        background: linear-gradient(231.53deg, #F57D4C 55.19%, #F1BE4A 94.79%);
+        clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+        z-index: -10; }
+
+.heros-container {
+  padding: 12rem 11.2rem 0;
+  font-family: "Roboto Condensed", sans-serif; }
+  .heros-container .hero-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; }
+    .heros-container .hero-header h2 {
+      font-style: italic;
+      font-size: 5.2rem;
+      line-height: 6.1rem;
+      text-transform: uppercase;
+      color: #002550; }
+    .heros-container .hero-header button {
+      background-color: #EF7D00;
+      color: white;
+      position: relative;
+      clip-path: polygon(10% 0%, 100% 0, 90% 100%, 0% 100%);
+      padding: 1.5rem 5.9rem;
+      line-height: 2.7rem;
+      cursor: pointer;
+      font-family: "Poppins", sans-serif;
+      white-space: nowrap;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1.8rem;
+      line-height: 2.7rem; }
+  .heros-container .hero-content {
+    display: flex;
+    padding-top: 6rem;
+    justify-content: space-around;
+    gap: 6rem; }
+    .heros-container .hero-content .hero-selection .type-hero {
+      display: flex;
+      gap: 1.8rem; }
+      .heros-container .hero-content .hero-selection .type-hero button {
+        background-color: #838B8F;
+        color: white;
+        position: relative;
+        clip-path: polygon(10% 0%, 100% 0, 90% 100%, 0% 100%);
+        padding: 1.5rem 5.9rem;
+        line-height: 2.7rem;
+        cursor: pointer;
+        font-family: "Poppins", sans-serif;
+        white-space: nowrap;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-family: "Roboto Condensed", sans-serif;
+        display: flex;
+        align-items: center;
+        gap: .6rem; }
+      .heros-container .hero-content .hero-selection .type-hero button.selected {
+        background-color: #002550; }
+    .heros-container .hero-content .hero-selection .hero-mozaico {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: 2rem 2.4rem;
+      padding-top: 4rem; }
+      .heros-container .hero-content .hero-selection .hero-mozaico button {
+        grid-column: 4 / 6;
+        grid-row: 4;
+        background-color: #EF7D00;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .9rem;
+        font-size: 1.589rem;
+        font-weight: bold;
+        font-style: italic;
+        line-height: 1.9rem;
+        text-transform: uppercase;
+        font-family: "Roboto Condensed", sans-serif; }
+    .heros-container .hero-content .hero-preview {
+      position: relative; }
+      .heros-container .hero-content .hero-preview .hero-about {
+        position: absolute;
+        bottom: 8rem;
+        left: -2rem; }
+        .heros-container .hero-content .hero-preview .hero-about h2 {
+          color: #EF7D00;
+          font-weight: bold;
+          font-style: italic;
+          text-transform: uppercase;
+          line-height: 3.7rem;
+          font-size: 3.2rem; }
+        .heros-container .hero-content .hero-preview .hero-about p {
+          color: #00AEFF;
+          font-weight: 300;
+          font-style: italic;
+          font-size: 2.4rem;
+          line-height: 2.8rem;
+          text-transform: uppercase; }
+      .heros-container .hero-content .hero-preview img {
+        width: 40rem; }
