@@ -9,12 +9,17 @@
 
     <!-- META -->
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="icon" href="./assets/images/icons/favicon.ico" sizes='32x32' type="image/x-icon">
 
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto+Condensed:ital,wght@0,400;1,300;1,400;1,700&display=swap" rel="stylesheet">    
 
+    <!-- CDN's -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+        
 </head>
     <header>
         <div class="header__background"></div>
@@ -60,14 +65,35 @@
         <div class="game-container">
             <div class="game-container__info">
                 <div class="game-container__buy">
-                    <img src="./assets/images/overwatch-name-white.svg" alt=" ">
+                    <div>
+                        <svg width='621' height='91'id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 624 90.7">
+                            <title>overwatch-name-white</title>
+                            <path d="M0,34,0,60.24c.06,4.41,2.52,7.45,6.83,10.33L18.2,58l.13-24H50.4V58L25.72,58,14.35,71.38l42.73.09c3.27,0,11.06-4.33,11.06-11.23V33.81c-2.42-3.85-6.54-10-8.83-13.45l-45.57-.07C4.89,20.3,0,25.17,0,34Z" fill="none" stroke="#fff" fill-rule="evenodd" data-word="O"/>
+                            <polygon points="99.64 71.47 112.25 71.47 146.6 20.3 126.29 20.37 106.86 51.61 86.71 20.37 67.62 20.37 99.64 71.47" fill="none" stroke="#fff" fill-rule="evenodd" data-word="V"/>
+                            <polygon points="145.51 32.66 145.51 71.47 199.26 71.47 199.26 58.01 162.26 58 162.26 51.06 187.84 51.06 187.84 40.16 162.26 40.16 162.26 33.18 199.26 33.26 199.26 20.35 153.77 20.35 145.51 32.66" fill="none" stroke="#fff" fill-rule="evenodd" data-word="E"/>
+                            <polygon points="400.38 19.69 386.87 19.69 352.4 71.15 372.72 71.08 393.63 38.62 414.67 71.71 433.75 71.71 400.38 19.69" fill="none" stroke="#fff" stroke-width="1" fill-rule="evenodd" data-word="A"/>
+                            
+                            <path d="M296.05,70.86h11.28l12.19-25.59,11.25,25.59h11.79c3.8-7.84,9-17.06,12.07-25l10.79-26.13-16.8.06-10.68,26-11.79-26H314.46L302.63,45.09l-8.1-19a52.93,52.93,0,0,0-2.74-6.41H273.63Z" fill="none" stroke-width="1" fill-rule="evenodd" stroke="#fff" data-word="W"/>
+                            <polygon points="606.82 19.69 624 19.69 624 71.47 606.82 71.47 606.82 51.94 574.43 51.94 574.43 71.47 557.25 71.47 557.25 19.69 574.43 19.69 574.43 38.12 606.82 38.12 606.82 19.69" fill="none" stroke="#fff" stroke-width="1"fill-rule="evenodd" data-word="H"/>
+                            
+                            <path d="M420.71,33.33h23.08V71.47h17.26l0-38.13h17.8c3.07-4.57,6.4-9.09,9.47-13.65H420.72V33.33Z" fill="none" stroke="#fff" fill-rule="evenodd" data-word="T"/>
+                            
+                            
+                            <path d="M485.3,37.44V61.49c0,3.5,4.2,10,11.11,10H532.3c10.79,0,17.18-3,17.06-13.64l-.06-5.89h-17V58H502.8V33.33h29.5v5.41h17.06V32.31c0-5.67-3.94-12.61-14.34-12.61H496.53C494.8,23,485.3,35.19,485.3,37.44Z" fill="none" stroke="#fff" fill-rule="evenodd" data-word="C"/>
+                            <path d="M207.3,71.47h18.33V34h27.66v8l-19.57,0V52.15L255,71.47H278l-21-19.56c11.3.33,13.22-5.52,13.22-10.63V30.57c0-7-5.45-10.28-12.6-10.28h-50.4V71.47Z" fill="none" stroke="#fff" fill-rule="evenodd" data-word="R"/>
+                            
+                            <path class='pathOrange' d="M93.81,19.23H121.3L107.56,0Z" fill="none" stroke="#ef7d00" fill-rule="evenodd" data-word="Arrow-1"/>
+                            
+                            <path class='pathOrange' d="M407.44,71.47H380L393.7,90.7Z" fill="none" stroke="#ef7d00" fill-rule="evenodd" data-word="Arrow-2"/>
+                        </svg>
+                        </div>
                     <div><button class="">Comprar Agora</button></div>
                 </div>
-                <div class="game-container__plataforms">
-                    <img src="./assets/images/icons/battlenet-icon.svg" alt="">
-                    <img src="./assets/images/icons/nintendo-icon.svg" alt="">
-                    <img src="./assets/images/icons/xbox-icon.svg" alt="">
-                    <img src="./assets/images/icons/playstation-icon.svg" alt="">
+                <div class="game-container__platforms">
+                    <img class='game_platform' src="./assets/images/icons/battlenet-icon.svg" alt="">
+                    <img class='game_platform' src="./assets/images/icons/nintendo-icon.svg" alt="">
+                    <img class='game_platform' src="./assets/images/icons/xbox-icon.svg" alt="">
+                    <img class='game_platform' src="./assets/images/icons/playstation-icon.svg" alt="">
                 </div>
             </div>
             <div class="game-container__preview">
@@ -87,7 +113,7 @@
                 <button>Saiba Mais</button>
             </div>
             <div class="news__person-background">
-                <img src="./assets/images/heros/Daco_4602447 1.png" alt="">
+                <img class='news__person_img'src="./assets/images/heros/Daco_4602447 1.png" alt="">
             </div>
         </div>
         <div class="news___new-game-container">
@@ -140,9 +166,12 @@
                     <h2>ASH</h2>
                     <p>Dano</p>
                 </div>
-                <img src="./assets/images/heros/preview/heros-3.png">
+                <div class="hero-preview_image">
+                    <img src="./assets/images/heros/preview/heros-3.png">
+                </div>
             </div>
         </div>
     </section>
+    <script type="module" src="./js/index.js"></script>
 </body>
 </html>

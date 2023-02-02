@@ -167,6 +167,10 @@ header{
             background-color: $gray-200;
             padding: 1.2rem 1.6rem;
             border-radius: .4rem 0 0 .4rem;
+            
+            img{
+                width: 2.5rem;
+            }
         }
         .nav__game-links{
             width: 100%;
@@ -261,10 +265,24 @@ header{
                     @include btnOverWatch($color: $orange);
                     font-size: 1.8rem;    
                 }
+                
+                path{
+                    fill: white;
+                    fill-opacity:0;
+                }
+
+                polygon{
+                    fill: white;
+                    fill-opacity:0;
+                }
+                
+                .pathOrange{
+                    fill: #ef7d00;
+                }
             
         }
 
-        .game-container__plataforms{
+        .game-container__platforms{
             display: flex;
             gap: 4rem;            
         }
@@ -430,7 +448,9 @@ header{
     .hero-header{
         width: 100%;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        white-space: nowrap;
+        gap: 47rem;
 
         h2{
             font-style: italic;
@@ -448,7 +468,7 @@ header{
     .hero-content{
         display: flex;
         padding-top: 6rem;
-        justify-content: space-around;
+        justify-content: center;
         gap: 6rem;
 
         .hero-selection{
@@ -491,6 +511,8 @@ header{
                     font-style: italic;
                     line-height: 1.9rem;
                     text-transform: uppercase;
+
+                    cursor: pointer;
 
                     font-family: $font-overwatch;
                 }
