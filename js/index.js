@@ -2,36 +2,23 @@ import init from './scrollReveal.js';
 
 init()
 
-const svgInOrder = function(){
-    const order = ['O', 'V', 'E', 'R', 'W', 'A', 'T', 'C', 'H', 'Arrow-1', 'Arrow-2']
+// Variables
+const game__header = document.querySelector('.game-header')
 
-    const svgPath = document.querySelectorAll('path')
-    const svgPoly = document.querySelectorAll('polygon')
-    const allEl = [...svgPath, ...svgPoly]
-
-    return order.map(word => allEl.find(el => el.dataset.word == word))
-}
-
-
-const svgOrdered = svgInOrder()
-
-const svgAnimate = anime({
-    targets: svgOrdered,
-    loop: false,
-    direction: 'alternate',
-    strokeDashoffset: [anime.setDashoffset, 0],
-    easing: 'easeInOutSine',
-    duration: 700,
-    delay: (el, i) => { return i * 300 + 900},
-    complete: () => {
-        svgOrdered.forEach(el => {
-            el.setAttribute('stroke', 'none')
-            el.animate([{fillOpacity: 1}], {duration: 1500, 
-            }).onfinish = function(anim){
-                const elAffected = anim.target.effect.target
-                elAffected.style.fillOpacity = 1
-            }
-            
-        })
+//Game Header
+const navGameDistance = Number(game__header.getBoundingClientRect().y) + Number(game__header.getBoundingClientRect().height)
+let navActive
+window.addEventListener('scroll', function(el){
+    if(window.scrollY > navGameDistance){
+        if(navActive) return
+        game__header.classList.add('sticky')
+        document.querySelector('.game-container').style.marginTop = '7rem';
+        navActive = !navActive
+    }
+    if(window.scrollY < navGameDistance){
+        if(!navActive) return
+        game__header.classList.remove('sticky')
+        document.querySelector('.game-container').style.marginTop = 0;
+        navActive = !navActive
     }
 })

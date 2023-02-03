@@ -88,9 +88,14 @@ header {
           color: #020203;
           border: 1px solid #020203; }
   header .game-header {
+    width: 100%;
     padding: 2.4rem 11.2rem 0;
     border-radius: .4rem;
+    z-index: 1000;
     display: flex; }
+    header .game-header.sticky {
+      position: fixed;
+      top: 0; }
     header .game-header .nav__game-logo {
       background-color: #394043;
       padding: 1.2rem 1.6rem;

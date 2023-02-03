@@ -114,8 +114,8 @@ header{
         height: 6.4rem;
         padding: 0 $page-spacing; 
         align-items: center;
-        gap: 14rem;                
-    
+        gap: 14rem;       
+        
        a{
         > img{
             width: 6.6rem;
@@ -159,8 +159,16 @@ header{
         
     }
     .game-header{
+        width: 100%;
         padding: 2.4rem $page-spacing 0;
         border-radius: .4rem;
+        z-index: 1000;
+        
+        &.sticky{
+            position: fixed;
+            top: 0;
+        }
+       
         
         display: flex;
         .nav__game-logo{
