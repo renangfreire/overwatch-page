@@ -175,7 +175,7 @@ function heroSectionReveal(){
     })
 }
 
-export default function init(){
+export default function scrollReveal(){
     headerReveal()
     newSectionReveal()
     heroSectionReveal()

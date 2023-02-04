@@ -16,8 +16,11 @@ a:link, a:visited {
   color: #ffffff; }
 
 header {
+  display: flex;
   height: 100vh;
-  position: relative; }
+  position: relative;
+  align-items: center;
+  flex-direction: column; }
   header .header__background:before {
     content: '';
     top: 0;
@@ -44,9 +47,10 @@ header {
     background-color: #020203;
     display: flex;
     height: 6.4rem;
-    padding: 0 11.2rem;
-    align-items: center;
-    gap: 14rem; }
+    padding: 0 calc(8.2rem + 1.5625vw);
+    align-items: center; }
+    header .company-header .company-logo {
+      flex: 14rem; }
     header .company-header a > img {
       width: 6.6rem; }
     header .company-header .company-functions {
@@ -88,69 +92,85 @@ header {
           color: #020203;
           border: 1px solid #020203; }
   header .game-header {
-    width: 100%;
-    padding: 2.4rem 11.2rem 0;
-    border-radius: .4rem;
-    z-index: 1000;
-    display: flex; }
+    width: 90%;
+    z-index: 1000; }
     header .game-header.sticky {
       position: fixed;
       top: 0; }
-    header .game-header .nav__game-logo {
-      background-color: #394043;
-      padding: 1.2rem 1.6rem;
-      border-radius: .4rem 0 0 .4rem; }
-      header .game-header .nav__game-logo img {
-        width: 2.5rem; }
-    header .game-header .nav__game-links {
+    header .game-header .game-header-content {
       width: 100%;
-      background-color: #F2F1ED;
-      display: flex;
-      justify-content: space-between;
-      padding: 0 2.4rem;
-      gap: 11.1rem; }
-      header .game-header .nav__game-links .nav__links, header .game-header .nav__game-links .nav__product-links {
+      border-radius: .4rem;
+      padding-top: 2.4rem;
+      display: flex; }
+      header .game-header .game-header-content .nav__game-logo {
+        background-color: #394043;
+        padding: 1.2rem 1.6rem;
+        border-radius: .4rem 0 0 .4rem; }
+        header .game-header .game-header-content .nav__game-logo img {
+          width: 2.5rem; }
+      header .game-header .game-header-content .nav__game-links {
+        width: 100%;
+        background-color: #F2F1ED;
         display: flex;
-        align-items: center; }
-      header .game-header .nav__game-links .nav__links {
-        gap: 1.6rem; }
-        header .game-header .nav__game-links .nav__links a:has(img) img {
-          padding-left: .8rem; }
-      header .game-header .nav__game-links .nav__product-links {
-        display: flex;
-        gap: 1.9rem; }
-        header .game-header .nav__game-links .nav__product-links .nav__link::before {
-          padding-right: 1.9rem; }
-      header .game-header .nav__game-links a {
-        color: #394043;
-        font-size: 1.3rem;
-        font-weight: 500;
+        justify-content: space-between;
+        padding: 0 2.4rem; }
+        header .game-header .game-header-content .nav__game-links .nav__links, header .game-header .game-header-content .nav__game-links .nav__product-links {
+          display: flex;
+          align-items: center; }
+        header .game-header .game-header-content .nav__game-links .nav__links {
+          gap: 1.6rem; }
+          header .game-header .game-header-content .nav__game-links .nav__links a:has(img) img {
+            padding-left: .8rem; }
+        header .game-header .game-header-content .nav__game-links .nav__product-links {
+          display: flex;
+          gap: 1.9rem; }
+          header .game-header .game-header-content .nav__game-links .nav__product-links .nav__link::before {
+            padding-right: 1.9rem; }
+        header .game-header .game-header-content .nav__game-links a {
+          color: #394043;
+          font-size: 1.3rem;
+          font-weight: 500;
+          line-height: 2rem;
+          text-transform: uppercase;
+          display: flex;
+          align-items: center; }
+        header .game-header .game-header-content .nav__game-links .nav__link {
+          display: flex; }
+          header .game-header .game-header-content .nav__game-links .nav__link.off {
+            display: none; }
+        header .game-header .game-header-content .nav__game-links .nav_link_responsive button {
+          padding: 1rem 1.4rem;
+          background-color: rgba(186, 192, 194, 0.25);
+          transition: 200ms;
+          border-radius: .4rem;
+          cursor: pointer; }
+          header .game-header .game-header-content .nav__game-links .nav_link_responsive button:hover {
+            background-color: rgba(186, 192, 194, 0.45); }
+        header .game-header .game-header-content .nav__game-links .nav_link_responsive img {
+          width: 1rem; }
+        header .game-header .game-header-content .nav__game-links .nav_link_responsive.hide {
+          display: none; }
+        header .game-header .game-header-content .nav__game-links .nav__link + .nav__link::before {
+          content: '';
+          width: 1px;
+          height: auto;
+          border-left: 1px solid #BAC0C2;
+          margin: 3px 0;
+          padding-right: 1.6rem; }
+      header .game-header .game-header-content .nav-game__buy-button {
+        background-color: #EF7D00;
+        color: #ffffff;
+        font-weight: bold;
         line-height: 2rem;
+        font-size: 1.3rem;
         text-transform: uppercase;
-        display: flex;
-        align-items: center; }
-      header .game-header .nav__game-links .nav__link {
-        display: flex; }
-      header .game-header .nav__game-links .nav__link + .nav__link::before {
-        content: '';
-        width: 1px;
-        height: auto;
-        border-left: 1px solid #BAC0C2;
-        margin: 3px 0;
-        padding-right: 1.6rem; }
-    header .game-header .nav-game__buy-button {
-      background-color: #EF7D00;
-      color: #ffffff;
-      font-weight: bold;
-      line-height: 2rem;
-      font-size: 1.3rem;
-      text-transform: uppercase;
-      padding: 1.4rem 3.6rem;
-      white-space: nowrap;
-      border-radius: 0 .4rem .4rem 0;
-      cursor: pointer; }
+        padding: 1.4rem 3.6rem;
+        white-space: nowrap;
+        border-radius: 0 .4rem .4rem 0;
+        cursor: pointer; }
   header .game-container {
-    padding: 11.3rem 11.2rem;
+    width: 100%;
+    padding: calc(.2rem + 10vh) calc(8.2rem + 1.5625vw);
     display: flex;
     height: calc(100% - 140px); }
     header .game-container .game-container__info {
@@ -174,12 +194,15 @@ header {
         text-transform: uppercase;
         font-weight: bold;
         font-size: 1.8rem; }
-      header .game-container .game-container__info path {
-        fill: white;
-        fill-opacity: 0; }
-      header .game-container .game-container__info polygon {
-        fill: white;
-        fill-opacity: 0; }
+      header .game-container .game-container__info svg {
+        width: calc(42.9rem + 10vw);
+        max-width: 621px; }
+        header .game-container .game-container__info svg path {
+          fill: white;
+          fill-opacity: 0; }
+        header .game-container .game-container__info svg polygon {
+          fill: white;
+          fill-opacity: 0; }
       header .game-container .game-container__info .pathOrange {
         fill: #ef7d00; }
     header .game-container .game-container__platforms {
@@ -226,10 +249,10 @@ header {
 
 .news-container {
   display: flex;
-  padding: 6rem 11.2rem 0;
+  padding: 6rem calc(8.2rem + 1.5625vw) 0;
   font-family: "Roboto Condensed", sans-serif;
   justify-content: center;
-  gap: 6rem;
+  gap: calc(1rem + 1.5625vw);
   overflow: hidden; }
   .news-container .news__person-container {
     display: flex;
@@ -270,16 +293,16 @@ header {
     .news-container .news__person-container .news__person-background {
       position: relative; }
       .news-container .news__person-container .news__person-background img {
-        width: 36rem; }
+        width: calc(7.2rem + 15vw); }
       .news-container .news__person-container .news__person-background:after {
         content: '';
         width: 50%;
-        height: calc(100% + 6.1rem);
+        height: calc(100% + 20rem);
         position: absolute;
-        top: -6.1rem;
+        top: -15rem;
         right: 0;
         background: linear-gradient(180deg, #4E99B8 0%, #91D7D5 100%);
-        z-index: -1; }
+        z-index: -10; }
   .news-container .news___new-game-container {
     display: flex;
     align-items: center; }
@@ -311,19 +334,21 @@ header {
           line-height: 2.7rem; }
     .news-container .news___new-game-container .news__new-game-background {
       position: relative; }
+      .news-container .news___new-game-container .news__new-game-background img {
+        width: calc(8rem + 15vw); }
       .news-container .news___new-game-container .news__new-game-background:before {
         content: "";
         position: absolute;
-        top: -8rem;
+        top: -20rem;
         width: 100rem;
-        height: calc(100% + 10rem);
-        left: 0;
+        height: calc(100% + 22rem);
+        left: 40px;
         background: linear-gradient(231.53deg, #F57D4C 55.19%, #F1BE4A 94.79%);
         clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
         z-index: -10; }
 
 .heros-container {
-  padding: 12rem 11.2rem 0;
+  padding: 12rem calc(8.2rem + 1.5625vw) 0;
   font-family: "Roboto Condensed", sans-serif; }
   .heros-container .hero-header {
     width: 100%;
@@ -355,7 +380,8 @@ header {
     display: flex;
     padding-top: 6rem;
     justify-content: center;
-    gap: 6rem; }
+    align-items: flex-end;
+    gap: calc(3rem + 1.5625rem); }
     .heros-container .hero-content .hero-selection .type-hero {
       display: flex;
       gap: 1.8rem; }
@@ -399,6 +425,11 @@ header {
         text-transform: uppercase;
         cursor: pointer;
         font-family: "Roboto Condensed", sans-serif; }
+      @media (max-width: 1024px) {
+        .heros-container .hero-content .hero-selection .hero-mozaico {
+          gap: calc(.8rem + 1vw) calc(1.2rem + 1vw); }
+          .heros-container .hero-content .hero-selection .hero-mozaico > img {
+            width: calc(2.4rem + 6vw); } }
     .heros-container .hero-content .hero-preview {
       position: relative; }
       .heros-container .hero-content .hero-preview .hero-about {
@@ -420,4 +451,14 @@ header {
           line-height: 2.8rem;
           text-transform: uppercase; }
       .heros-container .hero-content .hero-preview img {
-        width: 40rem; }
+        width: calc(11.2rem + 15vw);
+        max-width: 40rem; }
+
+footer {
+  width: 100%;
+  padding: 5rem 0; }
+
+@media (max-width: 1280px) and (min-width: 1024px) {
+  .heros-container .hero-header {
+    gap: 0rem;
+    justify-content: space-between; } }

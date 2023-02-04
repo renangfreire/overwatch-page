@@ -23,8 +23,10 @@
 </head>
     <header>
         <div class="header__background"></div>
-        <div style="position:relative"''><div class="company-header">
+       <div class="company-header">
+           <div class="company-logo">
             <a href="#"><img src="./assets/images/icons/blizzard-icon.svg" alt="Blizzard Logo"></a>
+           </div>
             <div class="company-functions">
                 <nav class="company-nav">
                     <div><span><a href="#">Jogos<img src="./assets/images/icons/basic-arrow.svg" alt=""></a></span></div>
@@ -39,28 +41,31 @@
                 </div>
             </div>
             
-        </div></div>
+        </div>
         <div class="game-header">
+            <div class="game-header-content">
             <div class="nav__game-logo">
                 <img src="./assets/images/icons/logo-white.svg" alt="" srcset="">
             </div>
             <div class="nav__game-links">
                 <nav class="nav__links">
-                    <div class="nav__link"><a href="#">Jogo<img src="./assets/images/icons/game-arrow.svg" alt=""></a></div>
-                    <div class="nav__link"><a href="#">Heróis</a></div>
-                    <div class="nav__link"><a href="#">Eventos<img src="./assets/images/icons/game-arrow.svg" alt=""></a></div>
-                    <div class="nav__link"><a href="#">Mídia<img src="./assets/images/icons/game-arrow.svg" alt=""></a></div>
-                    <div class="nav__link"><a href="#">Notícias<img src="./assets/images/icons/game-arrow.svg" alt=""></a></div>
-                    <div class="nav__link"><a href="#">Esportes<img src="./assets/images/icons/game-arrow.svg" alt=""></a></div>
-                    <div class="nav__link"><a href="#">Comunidades<img src="./assets/images/icons/game-arrow.svg" alt=""></a></div>  
+                    <div class="nav__link"><a href="#" data-link="Jogo" data-link_active="true">Jogo<img src="./assets/images/icons/game-arrow.svg" alt=""></a></div>
+                    <div class="nav__link"><a href="#" data-link="Heróis" data-link_active="true">Heróis</a></div>
+                    <div class="nav__link"><a href="#" data-link="Evento" data-link_active="true">Eventos<img src="./assets/images/icons/game-arrow.svg" alt=""></a></div>
+                    <div class="nav__link"><a href="#" data-link="Mídia" data-link_active="true">Mídia<img src="./assets/images/icons/game-arrow.svg" alt=""></a></div>
+                    <div class="nav__link"><a href="#" data-link="Notícias" data-link_active="true">Notícias<img src="./assets/images/icons/game-arrow.svg" alt=""></a></div>
+                    <div class="nav__link"><a href="#" data-link="Esporte" data-link_active="true">Esportes<img src="./assets/images/icons/game-arrow.svg" alt=""></a></div>
+                    <div class="nav__link"><a href="#" data-link="Comunidade" data-link_active="true">Comunidades<img src="./assets/images/icons/game-arrow.svg" alt=""></a></div>  
+                    <div class="nav_link_responsive hide"><button><img src="./assets/images/icons/dots.svg"/></button></div>  
                 </nav>
                 <div class="nav__product-links">
                     <div class="nav__link"><a href="#">Produtos</a></div>
                     <div class="nav__link"><a href="#">Entrar</a></div>
 
             </div>
-        </div>   
+        </div>
         <button class="nav-game__buy-button">Compre Já</button>
+        </div>   
         </div>
         <div class="game-container">
             <div class="game-container__info">
@@ -172,6 +177,7 @@
             </div>
         </div>
     </section>
+    <footer>Hi</footer>
     <script type="module" src="./js/index.js"></script>
 </body>
 </html>
