@@ -50,16 +50,13 @@ class reduceGameHeader {
 
 const nav_links = [...nav__links_original].filter(el => el.children[0].dataset.link).map(el => el.children[0])
 
-const resizeCallback = function(entries){
+const resizeCallback = function(){
 
     const browserWidth = window.innerWidth
-
-    const [entry] = entries
 
     const reduce = new reduceGameHeader()
 
     nav_links.forEach(el => {
-        
         if(el.dataset.link == orderToReduce[0]){
             if(browserWidth < 1280){
                 if(el.dataset.link_active == 'false') return

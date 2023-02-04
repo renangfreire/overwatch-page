@@ -226,6 +226,8 @@ header{
                 font-weight: 500;
                 line-height: 2rem;
                 text-transform: uppercase;
+                position: relative;
+
 
                 display: flex;
                 align-items: center;
@@ -237,6 +239,24 @@ header{
                 &.off{
                     display: none
                 }
+
+                    a::after{
+                        content: '';
+                        width: 100%;
+                        position: absolute;
+                        bottom: -1px;
+                        left: 0;
+                        height: 1px;
+                        border-bottom: 1px solid $gray-200;
+                        transform: scale(0,1);
+                        transition: .4s;          
+                    }
+
+                    &:hover{
+                        a::after{
+                            transform: scale(1,1)
+                        }
+                    }
             }
             
             .nav_link_responsive{
@@ -355,11 +375,32 @@ header{
                         width: 100%;
                         height: 100%;
                         background: radial-gradient(58.29% 58.29% at 50% 28.8%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.46) 100%);
-                        z-index: 1;
+                        z-index: 3;
                     }
                     img{
                         height: 18rem;
+                        
+                        &.static-preview{
+                            position: relative;
+                            z-index: 2;
+                            transition: .5s;
+                        }
+                        
+
+                        &.gif-preview{
+                            position: absolute;
+                            visibility: visible;
+                            opacity: 1;
+                            top: 0;
+                            left: 0;
+                            z-index: 0;
+
+                        }                        
                     }
+                }
+
+                &:hover .static-preview{
+                    opacity: 0                    
                 }
                 
                 button{
@@ -381,7 +422,6 @@ header{
                         padding: .2rem 1.3rem;
                         background-color: $orange;
                         clip-path: polygon(50% 50%, 0% 0, 0 100%);
-                        
                     }
                 }
             }
