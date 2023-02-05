@@ -107,7 +107,6 @@ const resizeCallback = function(){
 const resizeObserver = new ResizeObserver(resizeCallback)
 
 resizeObserver.observe(nav__game_links)
-
 }
 
 

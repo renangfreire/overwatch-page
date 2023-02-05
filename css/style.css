@@ -266,7 +266,7 @@ header {
           left: 50%;
           transform: translate(-50%, -50%);
           cursor: pointer;
-          z-index: 2; }
+          z-index: 4; }
           header .game-container .game-container__preview > div button .startButton:before {
             content: '';
             padding: .2rem 1.3rem;
@@ -427,6 +427,9 @@ header {
         display: flex;
         align-items: center;
         gap: .6rem; }
+        .heros-container .hero-content .hero-selection .type-hero button svg {
+          color: #ffffff;
+          width: 2.5rem; }
       .heros-container .hero-content .hero-selection .type-hero button.selected {
         background-color: #002550; }
     .heros-container .hero-content .hero-selection .hero-mozaico {
@@ -436,6 +439,14 @@ header {
       gap: 2rem 2.4rem;
       padding-top: 4rem; }
       .heros-container .hero-content .hero-selection .hero-mozaico button {
+        cursor: pointer; }
+      .heros-container .hero-content .hero-selection .hero-mozaico .select-hero-btn {
+        overflow: hidden; }
+        .heros-container .hero-content .hero-selection .hero-mozaico .select-hero-btn img {
+          transition: .4s; }
+          .heros-container .hero-content .hero-selection .hero-mozaico .select-hero-btn img:hover {
+            transform: scale(1.13); }
+      .heros-container .hero-content .hero-selection .hero-mozaico .all-heros-btn {
         grid-column: 4 / 6;
         grid-row: 4;
         background-color: #EF7D00;
@@ -457,11 +468,13 @@ header {
           .heros-container .hero-content .hero-selection .hero-mozaico > img {
             width: calc(2.4rem + 6vw); } }
     .heros-container .hero-content .hero-preview {
-      position: relative; }
+      position: relative;
+      height: 60rem;
+      display: flex;
+      align-items: center; }
       .heros-container .hero-content .hero-preview .hero-about {
         position: absolute;
-        bottom: 8rem;
-        left: -2rem; }
+        bottom: -1rem; }
         .heros-container .hero-content .hero-preview .hero-about h2 {
           color: #EF7D00;
           font-weight: bold;
@@ -475,7 +488,12 @@ header {
           font-style: italic;
           font-size: 2.4rem;
           line-height: 2.8rem;
-          text-transform: uppercase; }
+          text-transform: uppercase;
+          display: flex;
+          align-items: center;
+          gap: .6rem; }
+          .heros-container .hero-content .hero-preview .hero-about p img {
+            width: 2rem; }
       .heros-container .hero-content .hero-preview img {
         width: calc(11.2rem + 15vw);
         max-width: 40rem; }
