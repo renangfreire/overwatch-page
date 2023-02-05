@@ -64,7 +64,20 @@ header {
         header .company-header .company-functions .company-nav a {
           color: #ffffff;
           font-size: 1.4rem;
-          font-weight: 500; }
+          font-weight: 500;
+          position: relative; }
+          header .company-header .company-functions .company-nav a::after {
+            content: '';
+            width: 100%;
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            height: 1px;
+            border-bottom: 1px solid #ffffff;
+            transform: scale(0, 1);
+            transition: .4s; }
+          header .company-header .company-functions .company-nav a:hover::after {
+            transform: scale(1, 1); }
         header .company-header .company-functions .company-nav img {
           margin-left: 1.2rem;
           width: 1rem; }
@@ -81,7 +94,27 @@ header {
           line-height: 2.1rem;
           background-color: #020203;
           border: 1px solid #ffffff;
-          color: #ffffff; }
+          color: #ffffff;
+          z-index: 1;
+          position: relative;
+          overflow: hidden; }
+          header .company-header .company-functions .account-functions .btn-black:before, header .company-header .company-functions .account-functions .btn-black:after {
+            background-color: #ffffff;
+            content: '';
+            position: absolute;
+            z-index: -1;
+            height: 100%;
+            left: -70%;
+            top: 0;
+            transform: skew(50deg);
+            transition: .6s;
+            transform-origin: top left;
+            width: 0%; }
+          header .company-header .company-functions .account-functions .btn-black:hover {
+            color: #020203; }
+          header .company-header .company-functions .account-functions .btn-black:hover::after {
+            width: 170%;
+            height: 100%; }
         header .company-header .company-functions .account-functions .btn-white {
           font-size: 1.4rem;
           font-weight: 500;
@@ -90,7 +123,29 @@ header {
           cursor: pointer;
           line-height: 2.1rem;
           color: #020203;
-          border: 1px solid #020203; }
+          border: 1px solid #020203;
+          z-index: 1;
+          position: relative;
+          overflow: hidden; }
+          header .company-header .company-functions .account-functions .btn-white:before, header .company-header .company-functions .account-functions .btn-white:after {
+            background-color: #020203;
+            content: '';
+            position: absolute;
+            z-index: -1;
+            height: 100%;
+            left: -70%;
+            top: 0;
+            transform: skew(50deg);
+            transition: .6s;
+            transform-origin: top left;
+            width: 0%; }
+          header .company-header .company-functions .account-functions .btn-white:hover {
+            color: #ffffff; }
+          header .company-header .company-functions .account-functions .btn-white:hover::after {
+            width: 170%;
+            height: 100%; }
+          header .company-header .company-functions .account-functions .btn-white:hover {
+            border: 1px solid white; }
   header .game-header {
     width: 90%;
     z-index: 1000; }
@@ -134,12 +189,9 @@ header {
           text-transform: uppercase;
           position: relative;
           display: flex;
-          align-items: center; }
-        header .game-header .game-header-content .nav__game-links .nav__link {
-          display: flex; }
-          header .game-header .game-header-content .nav__game-links .nav__link.off {
-            display: none; }
-          header .game-header .game-header-content .nav__game-links .nav__link a::after {
+          align-items: center;
+          position: relative; }
+          header .game-header .game-header-content .nav__game-links a::after {
             content: '';
             width: 100%;
             position: absolute;
@@ -149,8 +201,12 @@ header {
             border-bottom: 1px solid #394043;
             transform: scale(0, 1);
             transition: .4s; }
-          header .game-header .game-header-content .nav__game-links .nav__link:hover a::after {
+          header .game-header .game-header-content .nav__game-links a:hover::after {
             transform: scale(1, 1); }
+        header .game-header .game-header-content .nav__game-links .nav__link {
+          display: flex; }
+          header .game-header .game-header-content .nav__game-links .nav__link.off {
+            display: none; }
         header .game-header .game-header-content .nav__game-links .nav_link_responsive button {
           padding: 1rem 1.4rem;
           background-color: rgba(186, 192, 194, 0.25);
@@ -180,7 +236,10 @@ header {
         padding: 1.4rem 3.6rem;
         white-space: nowrap;
         border-radius: 0 .4rem .4rem 0;
-        cursor: pointer; }
+        cursor: pointer;
+        transition: 600ms; }
+        header .game-header .game-header-content .nav-game__buy-button:hover {
+          filter: brightness(1.1); }
   header .game-container {
     width: 100%;
     padding: calc(.2rem + 10vh) calc(8.2rem + 1.5625vw);
@@ -206,7 +265,27 @@ header {
         white-space: nowrap;
         text-transform: uppercase;
         font-weight: bold;
+        z-index: 1;
+        position: relative;
+        overflow: hidden;
         font-size: 1.8rem; }
+        header .game-container .game-container__info button:before, header .game-container .game-container__info button:after {
+          background-color: #ffffff;
+          content: '';
+          position: absolute;
+          z-index: -1;
+          height: 100%;
+          left: -70%;
+          top: 0;
+          transform: skew(50deg);
+          transition: .6s;
+          transform-origin: top left;
+          width: 0%; }
+        header .game-container .game-container__info button:hover {
+          color: #EF7D00; }
+        header .game-container .game-container__info button:hover::after {
+          width: 170%;
+          height: 100%; }
       header .game-container .game-container__info svg {
         width: calc(42.9rem + 10vw);
         max-width: 621px; }
@@ -314,8 +393,12 @@ header {
       white-space: nowrap;
       text-transform: uppercase;
       font-weight: bold;
+      transition: 600ms;
       font-size: 1.8rem;
       margin-top: 3.2rem; }
+      .news-container .news__person-container .news__person-info button:hover {
+        filter: brightness(120%);
+        transform: translateY(-10%); }
     .news-container .news__person-container .news__person-background {
       position: relative; }
       .news-container .news__person-container .news__person-background img {
@@ -357,7 +440,11 @@ header {
           text-transform: uppercase;
           font-weight: bold;
           font-size: 1.8rem;
-          line-height: 2.7rem; }
+          line-height: 2.7rem;
+          transition: 600ms; }
+          .news-container .news___new-game-container .news__new-game-info div button:hover {
+            filter: brightness(120%);
+            transform: translateY(-10%); }
     .news-container .news___new-game-container .news__new-game-background {
       position: relative; }
       .news-container .news___new-game-container .news__new-game-background img {
@@ -400,8 +487,12 @@ header {
       white-space: nowrap;
       text-transform: uppercase;
       font-weight: bold;
+      transition: 600ms;
       font-size: 1.8rem;
       line-height: 2.7rem; }
+      .heros-container .hero-header button:hover {
+        filter: saturate(120%);
+        transform: translateY(-10%); }
   .heros-container .hero-content {
     display: flex;
     padding-top: 6rem;
@@ -461,7 +552,29 @@ header {
         line-height: 1.9rem;
         text-transform: uppercase;
         cursor: pointer;
-        font-family: "Roboto Condensed", sans-serif; }
+        font-family: "Roboto Condensed", sans-serif;
+        z-index: 1;
+        position: relative;
+        overflow: hidden; }
+        .heros-container .hero-content .hero-selection .hero-mozaico .all-heros-btn img {
+          width: 2.5rem; }
+        .heros-container .hero-content .hero-selection .hero-mozaico .all-heros-btn:before, .heros-container .hero-content .hero-selection .hero-mozaico .all-heros-btn:after {
+          background-color: #394043;
+          content: '';
+          position: absolute;
+          z-index: -1;
+          height: 100%;
+          left: -70%;
+          top: 0;
+          transform: skew(50deg);
+          transition: .6s;
+          transform-origin: top left;
+          width: 0%; }
+        .heros-container .hero-content .hero-selection .hero-mozaico .all-heros-btn:hover {
+          color: #ffffff; }
+        .heros-container .hero-content .hero-selection .hero-mozaico .all-heros-btn:hover::after {
+          width: 170%;
+          height: 100%; }
       @media (max-width: 1024px) {
         .heros-container .hero-content .hero-selection .hero-mozaico {
           gap: calc(.8rem + 1vw) calc(1.2rem + 1vw); }

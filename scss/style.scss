@@ -54,6 +54,52 @@ $black-gradient: linear-gradient(136.72deg, rgba(7, 7, 10, 0.86) 19.22%, rgba(15
     font-weight: bold;
 }
 
+@mixin btnDiagonalHover($bgColor, $hoverColor){
+    z-index: 1;
+    position: relative; 
+    overflow: hidden;
+
+    &:before, &:after{
+        background-color: $bgColor;
+        content: '';
+        position: absolute;
+        z-index: -1;
+        height: 100%;
+        left: -70%;
+        top: 0;
+        transform: skew(50deg);
+        transition: .6s;
+        transform-origin: top left;
+        width: 0%;
+    }
+
+    &:hover{
+        color: $hoverColor;
+    }
+    &:hover::after{
+       width: 170%;
+       height:100%;
+    }
+}
+
+@mixin navHover($color){
+    position: relative;
+    &::after{
+        content: '';
+        width: 100%;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        height: 1px;
+        border-bottom: 1px solid $color;
+        transform: scale(0,1);
+        transition: .4s;          
+    }
+
+    &:hover::after{ 
+            transform: scale(1,1)
+    }
+}
 // Reset Styles
 *{
     margin: 0;
@@ -140,6 +186,8 @@ header{
                     color: $white;
                     font-size: 1.4rem;
                     font-weight: 500;
+                    
+                    @include navHover($color: $white);
                 }
 
                 img{
@@ -154,9 +202,15 @@ header{
                 
                 .btn-black{
                     @include btn-theme;
+                    @include btnDiagonalHover($bgColor: $white, $hoverColor: $black-100)
                 }
                 .btn-white{
-                    @include btn-theme($dark-theme: false)
+                    @include btn-theme($dark-theme: false);
+                    @include btnDiagonalHover($bgColor: $black-100, $hoverColor: $white);
+                    &:hover{
+                        border: 1px solid white;
+                    }
+
                 }
             }
         }
@@ -231,6 +285,8 @@ header{
 
                 display: flex;
                 align-items: center;
+
+                @include navHover($color: $gray-200);
             }
 
             .nav__link{
@@ -240,23 +296,7 @@ header{
                     display: none
                 }
 
-                    a::after{
-                        content: '';
-                        width: 100%;
-                        position: absolute;
-                        bottom: -1px;
-                        left: 0;
-                        height: 1px;
-                        border-bottom: 1px solid $gray-200;
-                        transform: scale(0,1);
-                        transition: .4s;          
-                    }
-
-                    &:hover{
-                        a::after{
-                            transform: scale(1,1)
-                        }
-                    }
+                    
             }
             
             .nav_link_responsive{
@@ -306,6 +346,13 @@ header{
             border-radius: 0 .4rem .4rem 0;
     
             cursor: pointer;
+
+            transition: 600ms;
+
+            &:hover{
+                filter: brightness(1.1)
+                
+            }
         }
         }
     }
@@ -325,8 +372,8 @@ header{
             gap: 3.2rem;
             }     
                 button{
-                
                     @include btnOverWatch($color: $orange);
+                    @include btnDiagonalHover($bgColor: $white, $hoverColor: $orange);
                     font-size: 1.8rem;    
                 }
                 
@@ -468,8 +515,13 @@ header{
         }
         button{
             @include btnOverWatch($color: $blue);
+            transition: 600ms;
             font-size: 1.8rem;
             margin-top: 3.2rem;
+            &:hover{
+                filter: brightness(120%);
+                transform: translateY(-10%)
+            }
         }
     }
    .news__person-background{ 
@@ -509,7 +561,12 @@ header{
             button{
                 @include btnOverWatch($color: $orange);
                 font-size: 1.8rem;
-                line-height: 2.7rem
+                line-height: 2.7rem;
+                transition: 600ms;
+                &:hover{
+                    filter: brightness(120%);
+                    transform: translateY(-10%)
+                }
             }
         }
     }
@@ -554,8 +611,13 @@ header{
         }
         button{
             @include btnOverWatch($color: $orange);
+            transition: 600ms;
             font-size: 1.8rem;
             line-height: 2.7rem;
+            &:hover{
+                filter: saturate(120%);
+                transform: translateY(-10%);
+            }
         }
     }
     .hero-content{
@@ -627,6 +689,12 @@ header{
                     cursor: pointer;
 
                     font-family: $font-overwatch;
+
+                    img{
+                        width: 2.5rem;
+                    }
+
+                    @include btnDiagonalHover($bgColor: $gray-200, $hoverColor: $white);
                 }
 
                 @media (max-width: 1024px){

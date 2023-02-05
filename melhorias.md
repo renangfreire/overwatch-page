@@ -17,7 +17,7 @@ JS Menu - Desktop and Mobile = {
     Menu dropdown de Mobile [X]
     Menu dropdown de Desktop[X]
 }
-Buttons Effects CSS [X]
+Buttons Effects CSS [V]
 Change Hero on select [V]
 
 Create Footer [X]
