@@ -8,8 +8,9 @@ const dots_button = document.querySelector('.nav_link_responsive')
 function gameHeaderScroll(){
     const navGameDistance = 63 + Number(game__header.getBoundingClientRect().height)
     let navActive
-    
+
     window.addEventListener('scroll', function(el){
+        if(game__header.classList.contains('mobileActive')) return
         if(window.scrollY > navGameDistance){
             if(navActive) return
             game__header.classList.add('sticky')
@@ -28,8 +29,7 @@ function gameHeaderScroll(){
 
 
 // Game Header Responsive
-function gameHeaderResponsive(){
-
+function gameHeaderResizeResponsive(){
 
 const orderToReduce = ['Comunidade', 'Esporte', 'Notícias']
 
@@ -112,7 +112,7 @@ resizeObserver.observe(nav__game_links)
 
 export default function gameHeader(){
     gameHeaderScroll()
-    gameHeaderResponsive()
+    gameHeaderResizeResponsive()
 }
 
 

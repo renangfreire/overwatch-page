@@ -21,6 +21,10 @@ function changeImagePreview(heroSelected){
 function changeHero(btn){
     const heroSelected = Hero.allHeros.find(el => el.pathImg == `heros-${btn.dataset.hero}`)
 
+    const heroAlreadySelected = Boolean(hero_preview_img.getAttribute('src').search(heroSelected.pathImg) + 1)
+
+    if(heroAlreadySelected) return
+
     changeImagePreview(heroSelected)
     changeAboutHero(heroSelected)
 }

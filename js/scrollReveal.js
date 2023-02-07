@@ -52,6 +52,7 @@ function headerReveal(){
         duration: 400,
         opacity: 0,
         delay: 200,
+        mobile: false
     })
 
 ScrollReveal().reveal(game_buy, {
