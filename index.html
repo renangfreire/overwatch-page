@@ -30,11 +30,46 @@
            </div>
             <div class="company-functions">
                 <nav class="company-nav">
-                    <div><span><a href="#">Jogos<img src="./assets/images/icons/basic-arrow.svg" alt=""></a></span></div>
-                    <div><span><a href="#">Esportes<img src="./assets/images/icons/basic-arrow.svg" alt=""></a></span></div>
-                    <div><span><a href="#">Loja</a></span></div>
-                    <div><span><a href="#">Notícias</a></span></div>
-                    <div><span><a href="#">Suporte</a></span></div>
+                    <div class="company_link"><a href="#">Jogos<img src="./assets/images/icons/basic-arrow.svg" alt=""></a>
+                    <div class="company_dropdown-game hide">
+                        <div class="company_dropdown-game_content">
+                            <div><img src="./assets/images/games/diablo-ressurected.png" alt=""><span>Diablo® II ressurected</span></div>
+                            <div><img src="./assets/images/games/overwatch.svg" alt=""><span>Overwatch®</span></div>
+                            <div><img src="./assets/images/games/world-war.png" alt=""><span>World of Warcraft®</span></div>
+                            <div><img src="./assets/images/games/heartstone.png" alt=""><span>Hearthstone®</span></div>
+                            <div><img src="./assets/images/games/heroes-storm.png" alt=""><span>Heroes of the storm®</span></div>
+                            <div><img src="./assets/images/games/warcraft.png" alt=""><span>Warcraft® III Reforged</span></div>
+                            <div><img src="./assets/images/games/diabloIV.png" alt=""><span>Diablo® IV</span></div>
+                            <div><img src="./assets/images/games/diabloImortal.png" alt=""><span>Diablo® Immortal</span></div>
+                            <div><img src="./assets/images/games/diabloIII.png" alt=""><span>Diablo® III</span></div>
+                            <div><img src="./assets/images/games/starCraftII.png" alt=""><span>StarCraft® II</span></div>
+                            <div><img src="./assets/images/games/starCraft-remaster.png" alt=""><span>StarCraft® Remastered</span></div>
+                            <div><img src="./assets/images/games/arcade-blizzard.png" alt=""><span>Arcade da Blizzard®</span></div>
+                        </div>
+                        <div class="company_dropdown-game_footer">
+                            <div><a href="#"><img class='all-games'src="./assets/images/icons/all-games-icon.svg" alt="">Ver todos Jogos</a></div>
+                            <div><a href="#"><img src="./assets/images/icons/battlenet-icon-blue.svg" alt="">Aplicativo Battle.net</a></div>
+                            <div><a href="#"><img src="./assets/images/icons/icon-dowload.svg" alt="">Downloads</a></div>
+                            <div><a href="#"><img src="./assets/images/icons/chat-icon.svg" alt="">Fóruns dos jogos</a></div>
+                        </div>
+                    </div></div>
+                    <div class="company_link"><a href="#">Esportes<img src="./assets/images/icons/basic-arrow.svg" alt=""></a>
+                    <div class="company_dropdown-sports hide">
+                        <div class="company_dropdown-sports_content">
+                            <div><img src="./assets/images/sports/hearth-masters.png" alt=""><span>Hearthstone® masters</span></div>
+                            <div><img src="./assets/images/sports/Wow-mundial.png" alt=""><span>Campeonato Mundial de Arena WoW®</span></div>
+                            <div><img src="./assets/images/sports/star-wcs.png" alt=""><span>StarCraft® II WCS</span></div>
+                            <div><img src="./assets/images/sports/ow-mundial.png" alt=""><span>Copa Mundial de Overwatch®</span></div>
+                            <div><img src="./assets/images/sports/league-ow.png" alt=""><span>Liga de Overwatch®</span></div>
+                        </div>
+                        <div class="company_dropdown-sports_footer">
+                            <div><img src="./assets/images/icons/trophy-icon.svg" alt="">Torneios da comunidade</div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="company_link"><a href="#">Loja</a></div>
+                    <div class="company_link"><a href="#">Notícias</a></div>
+                    <div class="company_link"><a href="#">Suporte</a></div>
                 </nav>
                 <div class="account-functions">
                     <button class='btn-black'>Criar Conta</button>
@@ -50,14 +85,74 @@
             </div>
             <div class="nav__game-links">
                 <nav class="nav__links">
-                    <div class="nav__link"><a href="#" data-link="Jogo" data-link_active="true">Jogo<img src="./assets/images/icons/game-arrow.svg" alt=""></a></div>
-                    <div class="nav__link"><a href="#" data-link="Heróis" data-link_active="true">Heróis</a></div>
-                    <div class="nav__link"><a href="#" data-link="Evento" data-link_active="true">Eventos<img src="./assets/images/icons/game-arrow.svg" alt=""></a></div>
-                    <div class="nav__link"><a href="#" data-link="Mídia" data-link_active="true">Mídia<img src="./assets/images/icons/game-arrow.svg" alt=""></a></div>
-                    <div class="nav__link"><a href="#" data-link="Notícias" data-link_active="true">Notícias<img src="./assets/images/icons/game-arrow.svg" alt=""></a></div>
-                    <div class="nav__link"><a href="#" data-link="Esporte" data-link_active="true">Esportes<img src="./assets/images/icons/game-arrow.svg" alt=""></a></div>
-                    <div class="nav__link"><a href="#" data-link="Comunidade" data-link_active="true">Comunidades<img src="./assets/images/icons/game-arrow.svg" alt=""></a></div>  
-                    <div class="nav_link_responsive hide"><button><img src="./assets/images/icons/dots.svg"/></button></div>  
+                    <div class="nav__link"><a href="#" data-link="Jogo" data-link_active="true">Jogo<img src="./assets/images/icons/game-arrow.svg" alt=""></a>
+                        <div class="nav__game-game_dropdown hide">
+                            <div class="nav__game-game_dropdown_arrow"></div>
+                            <div class="nav__game-game_dropdown_content">
+                                <ul>
+                                    <li class="hide"><a href="#">Visão Geral<img src="./assets/images/icons/enter-arrow.svg" alt=""></a></li>
+                                    <li class="hide"><a href="#">Notas de Atualização</a></li>
+                                </ul>
+                            </div>
+                        </div></div>
+                    <div class="nav__link"><a href="#hero" data-link="Heróis" data-link_active="true">Heróis</a></div>
+                    <div class="nav__link"><a href="#" data-link="Evento" data-link_active="true">Eventos<img src="./assets/images/icons/game-arrow.svg" alt=""></a>
+                        <div class="nav__game-events_dropdown hide">
+                            <div class="nav__game-events_dropdown_arrow"></div>
+                            <div class="nav__game-events_dropdown_content">
+                                <ul>
+                                    <li class="hide"><a href="#">Temporada<img src="./assets/images/icons/enter-arrow.svg" alt=""></a></li>
+                                    <li class="hide"><a href="#">Novidades<img src="./assets/images/icons/enter-arrow.svg" alt=""></a></li>
+                                </ul>
+                            </div>
+                        </div></div>
+                    <div class="nav__link"><a href="#" data-link="Mídia" data-link_active="true">Mídia<img src="./assets/images/icons/game-arrow.svg" alt=""></a>
+                        <div class="nav__game-media_dropdown hide">
+                            <div class="nav__game-media_dropdown_arrow"></div>
+                            <div class="nav__game-media_dropdown_content">
+                                <ul>
+                                    <li class="hide"><a href="#">Músicas</a></li>
+                                    <li class="hide"><a href="#">Vídeos</a></li>
+                                    <li class="hide"><a href="#">Artes</a></li>
+                                </ul>
+                            </div>
+                        </div></div>
+                    <div class="nav__link"><a href="#news" data-link="Notícias" data-link_active="true">Notícias</a></div>
+                    <div class="nav__link"><a href="#" data-link="Esporte" data-link_active="true">Esportes<img src="./assets/images/icons/game-arrow.svg" alt=""></a>
+                        <div class="nav__game-sport_dropdown hide">
+                            <div class="nav__game-sport_dropdown_arrow"></div>
+                            <div class="nav__game-sport_dropdown_content">
+                                <ul>
+                                    <li class="hide"><a href="#">Liga Overwatch<img src="./assets/images/icons/enter-arrow.svg" alt=""></a></li>
+                                    <li class="hide"><a href="#">Contenders<img src="./assets/images/icons/enter-arrow.svg" alt=""></a></li>
+                                    <li class="hide"><a href="#">Divisão Aberta<img src="./assets/images/icons/enter-arrow.svg" alt=""></a></li>
+                                    <li class="hide"><a href="#">Copa Mundial de Overwatch<img src="./assets/images/icons/enter-arrow.svg" alt=""></a></li>
+                                </ul>
+                            </div>
+                        </div></div>
+                    <div class="nav__link"><a href="#" data-link="Comunidade" data-link_active="true">Comunidades<img src="./assets/images/icons/game-arrow.svg" alt=""></a>
+                        <div class="nav__game-community_dropdown hide">
+                            <div class="nav__game-community_dropdown_arrow"></div>
+                            <div class="nav__game-community_dropdown_content">
+                                <ul>
+                                    <li class="hide"><a href="">Fóruns</a></li>
+                                    <li class="hide"><a href="">Comunidade<img src="./assets/images/icons/enter-arrow.svg" alt=""></a></li>
+                                </ul>
+                            </div>
+                        </div></div>  
+                    <div class="nav_link_responsive hide"><button><img src="./assets/images/icons/dots.svg"/></button>
+                        <div class="nav__game-dots_dropdown hide">
+                            <div class="nav__game-dots_dropdown_arrow"></div>
+                            <div class="nav__game-dots_dropdown_content">
+                                <ul>
+                                    <li class="hide">Notícias<img src="./assets/images/icons/enter-arrow.svg" alt=""></li>
+                                    <li class="hide">Esportes<img src="./assets/images/icons/enter-arrow.svg" alt=""></li>
+                                    <li class="hide">Comunidades<img src="./assets/images/icons/enter-arrow.svg" alt=""></li>
+                                </ul>
+                            </div>
+                        </div> 
+                </div>
+                    
                 </nav>
                 <div class="nav__product-links">
                     <div class="nav__link"><a href="#">Produtos</a></div>
@@ -126,7 +221,7 @@
             </div>
         </div>
     </header>
-    <section class="news-container">
+    <section id='news' class="news-container">
         <div class="news__person-container">
             <div class="news__person-info">
                 <h3>Symmetra</h3>
@@ -179,7 +274,7 @@
                         </svg>
                         Suporte</button>
                 </div>
-                <div class="hero-mozaico">
+                <div id='hero' class="hero-mozaico">
                     <button class="select-hero-btn">
                         <img src="./assets/images/heros/icon/icon-1.png" data-hero='1' alt="Ana">
                     </button>

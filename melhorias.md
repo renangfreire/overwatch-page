@@ -15,7 +15,11 @@ JS Base - Responsive Menu and Effects = {
 }
 JS Menu - Desktop and Mobile = {
     Menu dropdown de Mobile [X]
-    Menu dropdown de Desktop[X]
+    Menu dropdown de Desktop{
+        GameHeader [V]
+        CompanyHeader [V]
+        Doots dropdown [X]
+    }
 }
 Buttons Effects CSS [V]
 Change Hero on select [V]
@@ -25,3 +29,8 @@ Create Footer [X]
 Create Metas - Description, author, and ... [X]
 Create README [X]
 Adjust Header Game  [X] - to usando position fixed, mas o certo é trocar pro sticky, mas vai quebrar toda a header, tenho q pensar noq fazer
+
+FIX ERRORS: {
+    nao trocar de personagem conta +10, para o primeiro. [V]
+    quebrando width da pagina ao animar troca de personagem [V]
+}

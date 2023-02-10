@@ -6,6 +6,7 @@ $page-spacing: calc(8.2rem + 1.5625vw);
 // Colors Variables
 $white: #ffffff;
 $white-900: #F2F1ED;
+$white-700: #e3e3e3;
 $black-100: #020203;
 $black-300: #15171B;
 $gray-200: #394043;
@@ -18,7 +19,7 @@ $blue: #0373BE;
 $light-blue: #00AEFF;
 $orange-gradient: linear-gradient(231.53deg, #F57D4C 55.19%, #F1BE4A 94.79%);
 $blue-gradient: linear-gradient(180deg, #4E99B8 0%, #91D7D5 100%);
-$black-gradient: linear-gradient(136.72deg, rgba(7, 7, 10, 0.86) 19.22%, rgba(15, 16, 22, 0.5) 76.59%);
+$black-gradient: linear-gradient(136.72deg, rgba(7, 7, 10, 0.95) 19.22%, rgba(15, 16, 22, 0.92) 76.59%);
 $footer-gradient: radial-gradient(31.74% 3046.23% at 50% 49.81%,#242a42 0,#121524 100%);
 
 // Mixins
@@ -101,6 +102,131 @@ $footer-gradient: radial-gradient(31.74% 3046.23% at 50% 49.81%,#242a42 0,#12152
             transform: scale(1,1)
     }
 }
+
+// DROPDOWN -- Global Dropdown
+
+@mixin gameDropdown(){
+    position:absolute;
+
+    padding-top: 2.9rem;
+    transform: translateX(-50%);
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &.hide{
+        display: none;
+    }
+
+    &_arrow{
+        background-color: $white-700;
+        width: 2rem;
+        height: 2rem;
+        clip-path: polygon(50% 50%, 0% 100%, 100% 100%);
+        position: relative;
+        top: 1px;
+    }
+
+    &_content{
+        background-color: $white-700;
+        border-radius: .4rem;
+        padding: 2.4rem;
+        ul{
+            white-space: nowrap;
+            list-style-type: none;
+            li{
+                display: flex;
+                gap: .6rem;
+                padding: .8rem 1.2rem;
+
+                img{
+                    width: 1.2rem;
+                }
+            }
+        }
+    }
+}
+
+@mixin companyDropdown($sports: false){
+    position: absolute;
+    width: 100%;
+    padding-top: 2rem;
+    left: 0;
+    z-index: 10000;
+
+    &.hide{
+        display: none;
+    }
+
+
+    &_content{
+    background: $black-gradient;
+    backdrop-filter: blur(3px);
+    padding: 7.2rem 14.2rem;
+    display: grid;
+    @if $sports{
+        display: flex;
+        justify-content: center;
+    }
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 9rem 10rem;
+
+    div{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        img{
+            width: 6.9rem;
+            @if $sports{
+                width: 17rem;
+            }
+        }
+        span{
+            font-size: 1.4rem;
+            color: $gray-700;
+            text-align: center;
+        }
+    }
+
+    
+    }
+
+    &_footer{
+        position: relative;
+        width: 100%;
+        background-color: $black-300;
+        
+        display: flex;
+        justify-content: center;
+        padding: 2.4rem 0;
+        gap: 6.4rem;
+        color: $white;
+        font-size: 1.6rem;
+        font-weight: 600;
+
+        div{
+            a::after{
+                display: none;
+            }
+            display: flex;
+            gap: 1rem;
+
+            img{
+                width: 2.4rem;
+            }
+
+            img.all-games{
+            width: 1.2rem;
+            }
+        }
+
+    }
+}
+
+
 // Reset Styles
 *{
     margin: 0;
@@ -191,12 +317,23 @@ header{
                     color: $white;
                     font-size: 1.4rem;
                     font-weight: 500;
+                    display: flex;
+                    gap: 1.2rem;
                     
                     @include navHover($color: $white);
+
+                }
+
+                .company_dropdown-game{
+                    @include companyDropdown();
+                }
+            
+                .company_dropdown-sports{
+                    @include companyDropdown($sports: true);
                 }
 
                 img{
-                     margin-left: 1.2rem;
+                    
                     width: 1rem; 
                 }
             }
@@ -215,7 +352,6 @@ header{
                     &:hover{
                         border: 1px solid white;
                     }
-
                 }
             }
         }
@@ -263,11 +399,6 @@ header{
             } 
             .nav__links{
                 gap: 1.6rem;
-                a:has(img){
-                    img{
-                        padding-left: .8rem;
-                    }
-                }
             }
             .nav__product-links{
                 display: flex;
@@ -291,21 +422,33 @@ header{
 
                 display: flex;
                 align-items: center;
+                gap: .8rem;
 
                 @include navHover($color: $gray-200);
             }
 
             .nav__link{
                 display: flex;
+                position: relative;
                 
                 &.off{
-                    display: none
+                    display: none;
                 }
 
-                    
+                // DROPDOWN NAV GAME
+                .nav__game-game_dropdown,
+                .nav__game-events_dropdown,
+                .nav__game-media_dropdown,
+                .nav__game-sport_dropdown,
+                .nav__game-community_dropdown{
+                    @include gameDropdown()   
+                }
+                
+                
             }
             
             .nav_link_responsive{
+                position: relative;
                 button{
                     padding: 1rem 1.4rem;
                     background-color: rgba($gray-700, .25);
@@ -322,6 +465,12 @@ header{
 
                 &.hide{
                     display:none;
+                }
+
+                .nav__game-dots_dropdown{
+                    @include gameDropdown();
+                    padding-top: 3.8rem;
+                    // display: none;
                 }
             }
 
@@ -601,6 +750,8 @@ header{
 }
 
 .heros-container{
+    overflow: hidden;
+
     padding: 12rem $page-spacing 0;
     font-family: $font-overwatch;
 
@@ -784,11 +935,11 @@ footer{
     padding: 5rem 0;
 }
 
-// Mobile
+// Mobile --------------------------------------------------------
 
-@media (max-width: 980px){
+@media (max-width: 1024px){
     html{
-        font-size: 50%;
+        font-size: 60%;
     }
 }
 
@@ -801,7 +952,7 @@ body.mobile{
                 }
             }
             .mobile-header{
-                position: sticky;
+                position: fixed;
                 top: 0;
                 background-color: $white-900;
                 width: 100%;
@@ -825,6 +976,7 @@ body.mobile{
             }
         
         .game-container{
+            margin-top: 6.963rem;
             flex-direction: column;
             gap: 8rem;
 
@@ -842,6 +994,10 @@ body.mobile{
                 justify-content: center;
                 .img__preview img{
                     height: calc(1.04rem + 20vh);
+
+                    @media (max-width: 450px){
+                        height: 18rem;
+                    }
                 }
             }
         }
@@ -895,10 +1051,17 @@ body.mobile{
                     gap: 4rem;
                     align-items: center;
                 }
+
+                h2{
+                    @media (max-width: 450px){
+                        font-size: 4rem;
+                    }
+                }
             }
             .hero-content{
                 flex-direction: column;
                 align-items: center;
+                gap: 7rem;
 
                 .hero-selection{
                     .type-hero{
@@ -933,9 +1096,14 @@ body.mobile{
                         }
                     }
                 }
-                .hero-preview_image{
+                .hero-preview{
+                    margin-bottom: 1rem;
+
+                    .hero-preview_image{
                         width: calc(11.2rem + 40vw);
+                    }
                 }
+                
                 
             }
         }
