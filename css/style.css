@@ -1042,7 +1042,8 @@ body.mobile {
       flex-direction: column;
       left: -100%;
       visibility: hidden;
-      transition: 1.4s; }
+      transition: 1.4s;
+      overflow: scroll; }
       body.mobile .menu-mobile .menu-mobile_wrapper.active {
         left: 0;
         visibility: visible; }

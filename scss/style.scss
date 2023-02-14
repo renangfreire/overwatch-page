@@ -1230,6 +1230,7 @@ body.mobile{
                     left: -100%;
                     visibility: hidden;
                     transition: 1.4s;
+                    overflow: scroll;
 
                     &.active{
                         left: 0;
