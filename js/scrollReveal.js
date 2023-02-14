@@ -5,6 +5,8 @@ const type_hero__buttons = document.querySelector('.type-hero')
 const hero_header = document.querySelector('.hero-header')
 const hero_mozaico = document.querySelector('.hero-mozaico')
 const hero_about = document.querySelector(".hero-about")
+const footer = document.querySelector('footer')
+const footerMediaSocial = document.querySelector('.footer-media_social')
 
 // Anime JS
 const svgInOrder = function(){
@@ -176,9 +178,39 @@ function heroSectionReveal(){
     })
 }
 
+function footerReveal(){
+    ScrollReveal().reveal(footer, {
+        duration: 300,
+        distance: '5rem',
+        origin: 'bottom',
+        opacity: 0,
+        easing: 'ease-in-out',
+        delay: 1200,
+    })
+    ScrollReveal().reveal(footer.children, {
+        duration: 700,
+        distance: '5rem',
+        origin: 'top',
+        opacity: 0,
+        easing: 'ease-in-out',
+        delay: 1500,
+        interval: 150
+    })
+    ScrollReveal().reveal(footerMediaSocial.children, {
+        duration: 500,
+        distance: '5rem',
+        origin: 'bottom',
+        opacity: 0,
+        easing: 'ease-in-out',
+        delay: 1200,
+        interval: 200
+    })
+}
+
 export default function scrollReveal(){
     headerReveal()
     newSectionReveal()
     heroSectionReveal()
+    footerReveal()
 }
 

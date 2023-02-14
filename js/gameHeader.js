@@ -1,3 +1,5 @@
+import DotsDropdownContent from './menuDropdown.js'
+
 // Variables DOM
 const game__header = document.querySelector('.game-header')
 const nav__links_original = document.querySelectorAll('.nav__link')
@@ -31,7 +33,7 @@ function gameHeaderScroll(){
 // Game Header Responsive
 function gameHeaderResizeResponsive(){
 
-const orderToReduce = ['Comunidade', 'Esporte', 'Notícias']
+const orderToReduce = ['Community', 'Sports', 'News']
 
 class reduceGameHeader {
     browserWidth = window.innerWidth
@@ -52,21 +54,28 @@ const nav_links = [...nav__links_original].filter(el => el.children[0].dataset.l
 
 const resizeCallback = function(){
 
+    const mobileActive = document.querySelector('body').classList.contains('mobile')
+
+    if(mobileActive)return
+
     const browserWidth = window.innerWidth
 
     const reduce = new reduceGameHeader()
+    const dotsDropdown = new DotsDropdownContent()
 
     nav_links.forEach(el => {
         if(el.dataset.link == orderToReduce[0]){
             if(browserWidth < 1280){
                 if(el.dataset.link_active == 'false') return
                 reduce.remove(el)
+                dotsDropdown.add(el)
                 dots_button.classList.remove('hide')
                 return
             }
             if(browserWidth > 1280){
                 if(el.dataset.link_active == 'true') return
                 reduce.add(el)
+                dotsDropdown.remove(el)
                 dots_button.classList.add('hide')
                 return
             }
@@ -75,6 +84,7 @@ const resizeCallback = function(){
         if(el.dataset.link == orderToReduce[1]){
             if(browserWidth < 1200){
                 if(el.dataset.link_active == 'false') return
+                dotsDropdown.add(el)
                 reduce.remove(el)
                 return
             }
@@ -83,6 +93,7 @@ const resizeCallback = function(){
             if(browserWidth > 1200){
                 if(el.dataset.link_active == 'true') return
                 reduce.add(el)
+                dotsDropdown.remove(el)
                 return
             }
         }
@@ -91,6 +102,7 @@ const resizeCallback = function(){
             if(browserWidth < 1080){
                 if(el.dataset.link_active == 'false') return
                 reduce.remove(el)
+                dotsDropdown.add(el)
                 return
             }
     
@@ -98,6 +110,7 @@ const resizeCallback = function(){
             if(browserWidth > 1080){
                 if(el.dataset.link_active == 'true') return
                 reduce.add(el)
+                dotsDropdown.remove(el)
                 return
             }
         }

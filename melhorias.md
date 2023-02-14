@@ -14,11 +14,11 @@ JS Base - Responsive Menu and Effects = {
     Efeitos de Hover no company Menu [V]
 }
 JS Menu - Desktop and Mobile = {
-    Menu dropdown de Mobile [X]
+    Menu dropdown de Mobile [V]
     Menu dropdown de Desktop{
         GameHeader [V]
         CompanyHeader [V]
-        Doots dropdown [X]
+        dot's dropdown [V]
     }
 }
 Buttons Effects CSS [V]

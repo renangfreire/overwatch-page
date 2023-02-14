@@ -98,17 +98,34 @@ header {
             grid-template-columns: repeat(6, 1fr);
             grid-template-rows: repeat(2, 1fr);
             gap: 9rem 10rem; }
-            header .company-header .company-functions .company-nav .company_dropdown-game_content div {
+            header .company-header .company-functions .company-nav .company_dropdown-game_content a {
               display: flex;
               flex-direction: column;
               gap: 1rem;
               align-items: center; }
-              header .company-header .company-functions .company-nav .company_dropdown-game_content div img {
+              header .company-header .company-functions .company-nav .company_dropdown-game_content a::after {
+                display: none; }
+              header .company-header .company-functions .company-nav .company_dropdown-game_content a img {
                 width: 6.9rem; }
-              header .company-header .company-functions .company-nav .company_dropdown-game_content div span {
+              header .company-header .company-functions .company-nav .company_dropdown-game_content a span {
                 font-size: 1.4rem;
                 color: #BAC0C2;
-                text-align: center; }
+                text-align: center;
+                position: relative; }
+                header .company-header .company-functions .company-nav .company_dropdown-game_content a span::after {
+                  content: '';
+                  width: 100%;
+                  position: absolute;
+                  bottom: -1px;
+                  left: 0;
+                  height: 1px;
+                  border-bottom: 1px solid #ffffff;
+                  transform: scale(0, 1);
+                  transition: .4s; }
+                header .company-header .company-functions .company-nav .company_dropdown-game_content a span:hover::after {
+                  transform: scale(1, 1); }
+              header .company-header .company-functions .company-nav .company_dropdown-game_content a:hover span::after {
+                transform: scale(1, 1); }
           header .company-header .company-functions .company-nav .company_dropdown-game_footer {
             position: relative;
             width: 100%;
@@ -147,18 +164,36 @@ header {
             grid-template-columns: repeat(6, 1fr);
             grid-template-rows: repeat(2, 1fr);
             gap: 9rem 10rem; }
-            header .company-header .company-functions .company-nav .company_dropdown-sports_content div {
+            header .company-header .company-functions .company-nav .company_dropdown-sports_content a {
               display: flex;
               flex-direction: column;
               gap: 1rem;
               align-items: center; }
-              header .company-header .company-functions .company-nav .company_dropdown-sports_content div img {
+              header .company-header .company-functions .company-nav .company_dropdown-sports_content a::after {
+                display: none; }
+              header .company-header .company-functions .company-nav .company_dropdown-sports_content a img {
                 width: 6.9rem;
-                width: 17rem; }
-              header .company-header .company-functions .company-nav .company_dropdown-sports_content div span {
+                max-width: 17rem;
+                width: calc(3.4rem + 10vw); }
+              header .company-header .company-functions .company-nav .company_dropdown-sports_content a span {
                 font-size: 1.4rem;
                 color: #BAC0C2;
-                text-align: center; }
+                text-align: center;
+                position: relative; }
+                header .company-header .company-functions .company-nav .company_dropdown-sports_content a span::after {
+                  content: '';
+                  width: 100%;
+                  position: absolute;
+                  bottom: -1px;
+                  left: 0;
+                  height: 1px;
+                  border-bottom: 1px solid #ffffff;
+                  transform: scale(0, 1);
+                  transition: .4s; }
+                header .company-header .company-functions .company-nav .company_dropdown-sports_content a span:hover::after {
+                  transform: scale(1, 1); }
+              header .company-header .company-functions .company-nav .company_dropdown-sports_content a:hover span::after {
+                transform: scale(1, 1); }
           header .company-header .company-functions .company-nav .company_dropdown-sports_footer {
             position: relative;
             width: 100%;
@@ -312,7 +347,7 @@ header {
           header .game-header .game-header-content .nav__game-links .nav__link .nav__game-game_dropdown,
           header .game-header .game-header-content .nav__game-links .nav__link .nav__game-events_dropdown,
           header .game-header .game-header-content .nav__game-links .nav__link .nav__game-media_dropdown,
-          header .game-header .game-header-content .nav__game-links .nav__link .nav__game-sport_dropdown,
+          header .game-header .game-header-content .nav__game-links .nav__link .nav__game-sports_dropdown,
           header .game-header .game-header-content .nav__game-links .nav__link .nav__game-community_dropdown {
             position: absolute;
             padding-top: 2.9rem;
@@ -324,13 +359,13 @@ header {
             header .game-header .game-header-content .nav__game-links .nav__link .nav__game-game_dropdown.hide,
             header .game-header .game-header-content .nav__game-links .nav__link .nav__game-events_dropdown.hide,
             header .game-header .game-header-content .nav__game-links .nav__link .nav__game-media_dropdown.hide,
-            header .game-header .game-header-content .nav__game-links .nav__link .nav__game-sport_dropdown.hide,
+            header .game-header .game-header-content .nav__game-links .nav__link .nav__game-sports_dropdown.hide,
             header .game-header .game-header-content .nav__game-links .nav__link .nav__game-community_dropdown.hide {
               display: none; }
             header .game-header .game-header-content .nav__game-links .nav__link .nav__game-game_dropdown_arrow,
             header .game-header .game-header-content .nav__game-links .nav__link .nav__game-events_dropdown_arrow,
             header .game-header .game-header-content .nav__game-links .nav__link .nav__game-media_dropdown_arrow,
-            header .game-header .game-header-content .nav__game-links .nav__link .nav__game-sport_dropdown_arrow,
+            header .game-header .game-header-content .nav__game-links .nav__link .nav__game-sports_dropdown_arrow,
             header .game-header .game-header-content .nav__game-links .nav__link .nav__game-community_dropdown_arrow {
               background-color: #e3e3e3;
               width: 2rem;
@@ -341,7 +376,7 @@ header {
             header .game-header .game-header-content .nav__game-links .nav__link .nav__game-game_dropdown_content,
             header .game-header .game-header-content .nav__game-links .nav__link .nav__game-events_dropdown_content,
             header .game-header .game-header-content .nav__game-links .nav__link .nav__game-media_dropdown_content,
-            header .game-header .game-header-content .nav__game-links .nav__link .nav__game-sport_dropdown_content,
+            header .game-header .game-header-content .nav__game-links .nav__link .nav__game-sports_dropdown_content,
             header .game-header .game-header-content .nav__game-links .nav__link .nav__game-community_dropdown_content {
               background-color: #e3e3e3;
               border-radius: .4rem;
@@ -349,14 +384,14 @@ header {
               header .game-header .game-header-content .nav__game-links .nav__link .nav__game-game_dropdown_content ul,
               header .game-header .game-header-content .nav__game-links .nav__link .nav__game-events_dropdown_content ul,
               header .game-header .game-header-content .nav__game-links .nav__link .nav__game-media_dropdown_content ul,
-              header .game-header .game-header-content .nav__game-links .nav__link .nav__game-sport_dropdown_content ul,
+              header .game-header .game-header-content .nav__game-links .nav__link .nav__game-sports_dropdown_content ul,
               header .game-header .game-header-content .nav__game-links .nav__link .nav__game-community_dropdown_content ul {
                 white-space: nowrap;
                 list-style-type: none; }
                 header .game-header .game-header-content .nav__game-links .nav__link .nav__game-game_dropdown_content ul li,
                 header .game-header .game-header-content .nav__game-links .nav__link .nav__game-events_dropdown_content ul li,
                 header .game-header .game-header-content .nav__game-links .nav__link .nav__game-media_dropdown_content ul li,
-                header .game-header .game-header-content .nav__game-links .nav__link .nav__game-sport_dropdown_content ul li,
+                header .game-header .game-header-content .nav__game-links .nav__link .nav__game-sports_dropdown_content ul li,
                 header .game-header .game-header-content .nav__game-links .nav__link .nav__game-community_dropdown_content ul li {
                   display: flex;
                   gap: .6rem;
@@ -364,7 +399,7 @@ header {
                   header .game-header .game-header-content .nav__game-links .nav__link .nav__game-game_dropdown_content ul li img,
                   header .game-header .game-header-content .nav__game-links .nav__link .nav__game-events_dropdown_content ul li img,
                   header .game-header .game-header-content .nav__game-links .nav__link .nav__game-media_dropdown_content ul li img,
-                  header .game-header .game-header-content .nav__game-links .nav__link .nav__game-sport_dropdown_content ul li img,
+                  header .game-header .game-header-content .nav__game-links .nav__link .nav__game-sports_dropdown_content ul li img,
                   header .game-header .game-header-content .nav__game-links .nav__link .nav__game-community_dropdown_content ul li img {
                     width: 1.2rem; }
         header .game-header .game-header-content .nav__game-links .nav_link_responsive {
@@ -389,7 +424,7 @@ header {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-top: 3.8rem; }
+            padding-top: 0; }
             header .game-header .game-header-content .nav__game-links .nav_link_responsive .nav__game-dots_dropdown.hide {
               display: none; }
             header .game-header .game-header-content .nav__game-links .nav_link_responsive .nav__game-dots_dropdown_arrow {
@@ -412,6 +447,8 @@ header {
                   padding: .8rem 1.2rem; }
                   header .game-header .game-header-content .nav__game-links .nav_link_responsive .nav__game-dots_dropdown_content ul li img {
                     width: 1.2rem; }
+            header .game-header .game-header-content .nav__game-links .nav_link_responsive .nav__game-dots_dropdown div.hide {
+              display: none; }
         header .game-header .game-header-content .nav__game-links .nav__link + .nav__link::before {
           content: '';
           width: 1px;
@@ -657,7 +694,7 @@ header {
 
 .heros-container {
   overflow: hidden;
-  padding: 12rem calc(8.2rem + 1.5625vw) 0;
+  padding: 12rem calc(8.2rem + 1.5625vw);
   font-family: "Roboto Condensed", sans-serif; }
   @media (max-width: 500px) {
     .heros-container {
@@ -790,6 +827,7 @@ header {
           .heros-container .hero-content .hero-selection .hero-mozaico > img {
             width: calc(2.4rem + 6vw); } }
     .heros-container .hero-content .hero-preview {
+      margin-bottom: 1rem;
       position: relative;
       height: 60rem;
       display: flex;
@@ -820,9 +858,63 @@ header {
         width: calc(11.2rem + 15vw);
         max-width: 40rem; }
 
+.menu-mobile {
+  display: none; }
+
 footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: radial-gradient(31.74% 3046.23% at 50% 49.81%, #242a42 0, #121524 100%);
   width: 100%;
-  padding: 5rem 0; }
+  padding: 5rem 0;
+  color: #e3e3e3; }
+  footer .footer-social {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.6rem; }
+    footer .footer-social h2 {
+      color: #ffffff;
+      font-family: "Roboto Condensed", sans-serif;
+      text-transform: uppercase;
+      font-size: 3.6rem; }
+    footer .footer-social .footer-media_social {
+      display: flex;
+      gap: 1.2rem; }
+      footer .footer-social .footer-media_social img {
+        width: 4rem; }
+  footer .company-footer {
+    padding-top: 4rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.6rem; }
+    footer .company-footer .company-footer_nav {
+      display: flex;
+      gap: 1.2rem; }
+      footer .company-footer .company-footer_nav .company-footer_link {
+        display: flex;
+        gap: .6rem; }
+        footer .company-footer .company-footer_nav .company-footer_link a {
+          font-size: 1.2rem;
+          text-transform: uppercase; }
+      footer .company-footer .company-footer_nav .company-footer_link + .company-footer_link::before {
+        content: '';
+        width: 1px;
+        height: auto;
+        border-left: 1px solid #BAC0C2;
+        margin: 4px 0;
+        padding-right: 1.2rem; }
+  footer .footer-brand_info {
+    padding: 2rem 1.6rem 0;
+    text-align: center;
+    line-height: 1.8rem;
+    font-size: 1.2rem; }
+    footer .footer-brand_info h3:first-of-type {
+      padding-top: 1.2rem; }
+  footer .footer-game_classification {
+    padding-top: 4rem; }
 
 @media (max-width: 1024px) {
   html {
@@ -842,8 +934,10 @@ body.mobile {
     align-items: center;
     padding: 1.5rem 0;
     z-index: 1000; }
-    body.mobile header .mobile-header .mobile_menu-icon img {
-      width: 2.6rem; }
+    body.mobile header .mobile-header .mobile_menu-icon .btn_menu-mobile {
+      cursor: pointer; }
+      body.mobile header .mobile-header .mobile_menu-icon .btn_menu-mobile img {
+        width: 2.6rem; }
     body.mobile header .mobile-header .mobile_logo-icon img {
       width: 4rem; }
     body.mobile header .mobile-header .mobile_account-icon img {
@@ -923,7 +1017,118 @@ body.mobile {
           body.mobile .heros-container .hero-content .hero-selection .hero-mozaico .all-heros-btn {
             grid-column: 1 / 4;
             grid-row: 7; } }
-    body.mobile .heros-container .hero-content .hero-preview {
-      margin-bottom: 1rem; }
-      body.mobile .heros-container .hero-content .hero-preview .hero-preview_image {
-        width: calc(11.2rem + 40vw); }
+    body.mobile .heros-container .hero-content .hero-preview .hero-preview_image {
+      width: calc(11.2rem + 40vw); }
+  body.mobile .menu-mobile {
+    display: inline; }
+    body.mobile .menu-mobile .menu-mobile_overlay {
+      display: inline;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.4);
+      visibility: hidden; }
+      body.mobile .menu-mobile .menu-mobile_overlay.visible {
+        visibility: visible; }
+    body.mobile .menu-mobile .menu-mobile_wrapper {
+      position: fixed;
+      top: 0;
+      z-index: 10000;
+      background-color: #F2F1ED;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      left: -100%;
+      visibility: hidden;
+      transition: 1.4s; }
+      body.mobile .menu-mobile .menu-mobile_wrapper.active {
+        left: 0;
+        visibility: visible; }
+      body.mobile .menu-mobile .menu-mobile_wrapper .menu-mobile_header {
+        display: flex;
+        position: relative; }
+        body.mobile .menu-mobile .menu-mobile_wrapper .menu-mobile_header button {
+          background-color: rgba(186, 192, 194, 0.25);
+          padding: .8rem;
+          margin: .8rem;
+          border-radius: .4rem;
+          cursor: pointer;
+          transition: .2s;
+          position: absolute; }
+          body.mobile .menu-mobile .menu-mobile_wrapper .menu-mobile_header button:hover {
+            background-color: rgba(186, 192, 194, 0.4); }
+          body.mobile .menu-mobile .menu-mobile_wrapper .menu-mobile_header button img {
+            width: 2rem; }
+        body.mobile .menu-mobile .menu-mobile_wrapper .menu-mobile_header div {
+          display: flex;
+          flex: 100%;
+          justify-content: center;
+          padding: 1.2rem 0; }
+          body.mobile .menu-mobile .menu-mobile_wrapper .menu-mobile_header div img {
+            width: 13em; }
+      body.mobile .menu-mobile .menu-mobile_wrapper .menu-mobile_content {
+        padding: .8rem; }
+        body.mobile .menu-mobile .menu-mobile_wrapper .menu-mobile_content .menu-mobile_logo {
+          display: flex;
+          gap: .6rem;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 4rem; }
+          body.mobile .menu-mobile .menu-mobile_wrapper .menu-mobile_content .menu-mobile_logo img:first-child {
+            width: calc(3rem + 40vw);
+            max-width: 19rem; }
+          body.mobile .menu-mobile .menu-mobile_wrapper .menu-mobile_content .menu-mobile_logo img:last-child {
+            width: calc(10rem + 40vw);
+            max-width: 32rem; }
+        body.mobile .menu-mobile .menu-mobile_wrapper .menu-mobile_content .menu-mobile_nav {
+          display: flex;
+          flex-direction: column;
+          gap: 1.2rem; }
+          body.mobile .menu-mobile .menu-mobile_wrapper .menu-mobile_content .menu-mobile_nav a {
+            font-size: 1.8rem;
+            color: #15171B;
+            display: flex;
+            align-items: center;
+            gap: .6rem; }
+        body.mobile .menu-mobile .menu-mobile_wrapper .menu-mobile_content .menu-mobile-buy {
+          width: 100%;
+          padding: 1.6rem 1.2rem; }
+          body.mobile .menu-mobile .menu-mobile_wrapper .menu-mobile_content .menu-mobile-buy button {
+            background-color: #EF7D00;
+            color: #ffffff;
+            font-size: 1.6rem;
+            width: 100%;
+            padding: 1.2rem;
+            border-radius: .4rem;
+            font-family: "Poppins", sans-serif; }
+      body.mobile .menu-mobile .menu-mobile_wrapper .menu-mobile_footer {
+        flex: 100%;
+        background-color: rgba(186, 192, 194, 0.5);
+        padding: .8rem; }
+        body.mobile .menu-mobile .menu-mobile_wrapper .menu-mobile_footer .menu-mobile_footer-title h2 {
+          color: #838B8F;
+          font-size: 1.4rem;
+          text-transform: uppercase;
+          font-weight: 600;
+          padding: 1.6rem 1.2rem .8rem; }
+        body.mobile .menu-mobile .menu-mobile_wrapper .menu-mobile_footer .menu-mobile_footer-nav {
+          display: flex;
+          flex-direction: column; }
+          body.mobile .menu-mobile .menu-mobile_wrapper .menu-mobile_footer .menu-mobile_footer-nav a {
+            display: flex;
+            gap: .6rem;
+            color: #15171B;
+            font-size: 1.4rem;
+            padding: 1.2rem; }
+  @media (max-width: 450px) {
+    body.mobile footer .company-footer {
+      gap: 2.4rem; }
+      body.mobile footer .company-footer .company-footer_nav {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        text-align: center; }
+        body.mobile footer .company-footer .company-footer_nav .company-footer_link:nth-of-type(4):before {
+          display: none; } }
